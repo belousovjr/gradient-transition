@@ -5,7 +5,7 @@
   "description": "A JavaScript library to smoothly animate background-image gradients using JS control — no canvas, just real-time visual flair with full DOM compatibility.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chore: bump version to 0.0.3 Valentin Belousov Yesterday 18:32belousovjr/gradient-transition.git"
+    "url": "https://github.com/belousovjr/gradient-transition.git"
   },
   "homepage": "https://github.com/belousovjr/gradient-transition#readme",
   "main": "./dist/gradient-transition.cjs",
