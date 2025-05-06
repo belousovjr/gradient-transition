@@ -50,6 +50,7 @@
   "dependencies": {
     "@types/color-rgba": "^2.1.3",
     "@types/gradient-parser": "^0.1.5",
+    "bezier-easing": "^2.1.0",
     "color-rgba": "^3.0.0",
     "css-rules-matcher": "^0.0.7",
     "gradient-parser": "^1.1.1"
