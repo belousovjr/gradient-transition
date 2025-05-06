@@ -10,8 +10,6 @@ function parseColor(color: string): ColorParsed {
   return result.length ? result : [...initialColorParsed];
 }
 
-//TODO fix errors messages
-
 export function stringifyColor(color: ColorParsed) {
   return `rgba(${color.join(",")})`;
 }
