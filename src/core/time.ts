@@ -2,7 +2,7 @@ import { BezierValue, BezierValueParsed, parseBezierValue } from "./bezier.ts";
 
 type TimeValue = `${number}ms` | `${number}s`;
 
-interface TimeOptions {
+export interface TimeOptions {
   timingFn: BezierValueParsed;
   duration: number;
   delay: number;

@@ -10,7 +10,7 @@ function isCustomBezier(bezier: BezierValue): bezier is CustomBezierString {
   return bezier.includes("cubic-bezier");
 }
 
-const bezierStandards: Record<BezierPreset, BezierValueParsed> = {
+export const bezierPresets: Record<BezierPreset, BezierValueParsed> = {
   linear: [0.0, 0.0, 1.0, 1.0],
   ease: [0.25, 0.1, 0.25, 1.0],
   "ease-in": [0.42, 0.0, 1.0, 1.0],
@@ -22,6 +22,6 @@ export function parseBezierValue(bezier: BezierValue): BezierValueParsed {
   if (isCustomBezier(bezier)) {
     return bezier.match(/-?\d*\.?\d+/g)!.map(Number) as BezierValueParsed;
   } else {
-    return bezierStandards[bezier];
+    return bezierPresets[bezier];
   }
 }
