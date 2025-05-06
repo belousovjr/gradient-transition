@@ -1,0 +1,50 @@
+{
+  "name": "gradient-transition",
+  "version": "0.0.6",
+  "type": "module",
+  "description": "A JavaScript library to smoothly animate background-image gradients using JS control — no canvas, just real-time visual flair with full DOM compatibility.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belousovjr/gradient-transition.git"
+  },
+  "homepage": "https://github.com/belousovjr/gradient-transition#readme",
+  "main": "./dist/gradient-transition.cjs",
+  "module": "./dist/gradient-transition.js",
+  "unpkg": "./dist/gradient-transition.umd.cjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/gradient-transition.js",
+      "require": "./dist/gradient-transition.cjs",
+      "default": "./dist/gradient-transition.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "~5.7.2",
+    "vite": "^6.3.1",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "keywords": [
+    "css",
+    "animated",
+    "animate",
+    "transition",
+    "gradient",
+    "background",
+    "fluid",
+    "dynamic",
+    "smooth",
+    "style",
+    "styles"
+  ],
+  "license": "MIT"
+}
