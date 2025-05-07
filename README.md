@@ -23,6 +23,7 @@ yarn add gradient-transition
 ```html
 <script src="https://unpkg.com/gradient-transition@0.0.1/dist/gradient-transition.umd.cjs"></script>
 ```
+> **Note**: This will expose the library globally as `GradientTransition`.
 ---
 
 ## Quick Start
@@ -56,13 +57,13 @@ yarn add gradient-transition
 3. **Initialize** with JavaScript:
 
    ```js
-   import CSSRulesMatcher from 'css-rules-matcher';
+   import { attach, detach, reset } from 'gradient-transition';
    // Attach gradient transition to all matching wrappers
-   GradientTransition.attach('.gt-wrap.my-wrapper');
+   attach('.gt-wrap.my-wrapper');
    // To detach
-   GradientTransition.detach('.gt-wrap.my-wrapper');
+   detach('.gt-wrap.my-wrapper');
    // To reset all transitions
-   GradientTransition.reset();
+   reset();
    ```
 ---
 
