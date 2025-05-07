@@ -53,6 +53,7 @@
     "bezier-easing": "^2.1.0",
     "color-rgba": "^3.0.0",
     "css-rules-matcher": "^0.0.7",
-    "gradient-parser": "^1.1.1"
+    "gradient-parser": "^1.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   }
 }

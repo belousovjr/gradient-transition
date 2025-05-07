@@ -1,0 +1,15 @@
+.gt-wrap {
+    position: relative;
+    z-index: 0;
+    will-change: background-image;
+}
+
+.gt-wrap .gt-render {
+    will-change: background-image, display;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
