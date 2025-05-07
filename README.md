@@ -4,10 +4,10 @@ A JavaScript library to smoothly animate background-image gradients.
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Quick Start](#quick-start)
-* [Supported Features and Limitations](#supported-features-and-limitations)
-* [Performance Considerations](#performance-considerations)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Supported Features and Limitations](#supported-features-and-limitations)
+- [Performance Considerations](#performance-considerations)
 
 ## Installation
 
@@ -20,10 +20,13 @@ yarn add gradient-transition
 ```
 
 **CDN:**
+
 ```html
-<script src="https://unpkg.com/gradient-transition@0.0.5/dist/gradient-transition.umd.cjs"></script>
+<script src="https://unpkg.com/gradient-transition@0.0.6/dist/gradient-transition.umd.cjs"></script>
 ```
+
 > **Note**: This will expose the library globally as `GradientTransition`.
+
 ---
 
 ## Quick Start
@@ -31,48 +34,44 @@ yarn add gradient-transition
 1. **Add the markup**:
 
    ```html
-   <div class="gt-wrap my-wrapper">
+   <div class="gt-wrap my-wrapper" style="height: 200px; width: 200px;">
      <span class="gt-render my-gradient"></span>
-     <span>Some Content</span>
+     SOME CONTENT
    </div>
    ```
 
-    * `.gt-wrap` and `.gt-render` are reserved classes required by the library.
-    * `.my-gradient` and `.my-wrapper` are your custom classes for gradients styling.
+   - `.gt-wrap` and `.gt-render` are reserved classes required by the library.
 
-2. **Define your CSS gradient** on the `.gt-render.my-gradient` element:
+2. **Define your CSS gradient transition** on the `.my-gradient` element:
 
    ```css
-   /* Initial gradient */
    .my-wrapper .my-gradient {
      background-image: linear-gradient(90deg, green, white, red);
-     /* Optional: customize transition properties */
      transition: background-image 1s ease-in-out;
    }
-   /* On hover, triggers a smooth transition */
    .my-wrapper:hover .my-gradient {
-     background-image: linear-gradient(black, red, yellow);
+     background-image: linear-gradient(to bottom, black, red, yellow);
    }
    ```
 
 3. **Initialize** with JavaScript:
 
    ```js
-   import { attach, detach, reset } from 'gradient-transition';
-   // Attach gradient transition to all matching wrappers
-   attach('.gt-wrap.my-wrapper');
-   // To detach
-   detach('.gt-wrap.my-wrapper');
-   // To reset all transitions
-   reset();
+   import { attach, detach, reset } from "gradient-transition";
+   attach(".gt-wrap.my-wrapper"); // Attach to all matching wrappers
+   detach(".gt-wrap.my-wrapper"); // To detach
+   reset(); // To reset all
    ```
+
+[👉 Live Demo on CodePen](https://codepen.io/belousowork/pen/KwwBwrQ)
+
 ---
 
 ## Supported Features and Limitations
 
-* **Gradient types**: `linear-gradient`, `radial-gradient`.
-* **Angle units**: `deg`, `rad`.
-* **Color stop units**: `px`, `%`, `em`.
+- **Gradient types**: `linear-gradient`, `radial-gradient`.
+- **Angle units**: `deg`, `rad`.
+- **Color stop units**: `px`, `%`, `em`.
 
 ---
 
@@ -82,5 +81,5 @@ Animating gradients in real time is computationally intensive. **Use with cautio
 
 ---
 
-*Issues, suggestions, and pull requests are welcome!  
-Feel free to check out the  [GitHub](https://github.com/belousovjr/gradient-transition).*
+_Issues, suggestions, and pull requests are welcome!  
+Feel free to check out the [GitHub](https://github.com/belousovjr/gradient-transition)._
