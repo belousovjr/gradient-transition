@@ -44,13 +44,13 @@ yarn add gradient-transition
 
    ```css
    /* Initial gradient */
-   .my-gradient {
+   .my-wrapper .my-gradient {
      background-image: linear-gradient(90deg, green, white, red);
      /* Optional: customize transition properties */
      transition: background-image 1s ease-in-out;
    }
    /* On hover, triggers a smooth transition */
-   .my-gradient:hover {
+   .my-wrapper:hover .my-gradient {
      background-image: linear-gradient(black, red, yellow);
    }
    ```
