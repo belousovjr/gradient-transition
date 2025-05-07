@@ -1,6 +1,6 @@
 {
   "name": "gradient-transition",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "A JavaScript library to smoothly animate background-image gradients.",
   "repository": {
