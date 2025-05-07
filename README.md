@@ -21,7 +21,7 @@ yarn add gradient-transition
 
 **CDN:**
 ```html
-<script src="https://unpkg.com/gradient-transition@0.0.1/dist/gradient-transition.umd.cjs"></script>
+<script src="https://unpkg.com/gradient-transition@0.0.2/dist/gradient-transition.umd.cjs"></script>
 ```
 > **Note**: This will expose the library globally as `GradientTransition`.
 ---
