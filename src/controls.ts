@@ -51,10 +51,10 @@ export function attach(selector: string, options: AttachOptions = {}) {
 }
 
 export function detach(selector: string) {
-  const elements = document.querySelectorAll(selector);
+  const elements = document.querySelectorAll<Target>(selector);
 
   for (const el of elements) {
-    wraps.delete(el as Target);
+    wraps.delete(el);
   }
 
   if (wraps.size === 0 && animFrame) {
