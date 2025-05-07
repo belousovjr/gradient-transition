@@ -74,13 +74,15 @@ function frame(wrap: Target, state: TransitionState) {
   const emSize = Number(computedStyle.fontSize.replace("px", ""));
   const timeOptions = parseTimeProperties(computedStyle);
 
-  const key = createStyleSnapshot(
-    state.target,
-    String(emSize),
-    JSON.stringify(timeOptions.timingFn),
-    String(timeOptions.duration),
-    String(timeOptions.delay),
-  );
+  const key = createStyleSnapshot(state.target, {
+    excludeProps: ["display"],
+    addItems: [
+      String(emSize),
+      JSON.stringify(timeOptions.timingFn),
+      String(timeOptions.duration),
+      String(timeOptions.delay),
+    ],
+  });
 
   if (!state.provider) {
     state.provider = new TransitionProvider({
