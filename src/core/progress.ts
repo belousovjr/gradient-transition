@@ -4,6 +4,7 @@ import { OrientationParsed } from "./orientation.ts";
 import { initialColorParsed } from "./colors.ts";
 import { initialLinearOrientation } from "./orientation.ts";
 import { LengthParsed } from "./length.ts";
+import { AttachOptions } from "./transition.ts";
 
 const initialStopParsed: ColorStopParsed = {
   value: { ...initialColorParsed },
@@ -113,8 +114,10 @@ export function interpolateGradient(
   grad1Raw: GradientParsed,
   grad2Raw: GradientParsed,
   progress: number,
-  fromStart: boolean,
+  options: AttachOptions,
 ): GradientParsed {
+  const fromStart = options.direction === "start";
+
   const grad1 = normalizeToGradientTemplate(grad1Raw, grad2Raw);
   const grad2 = normalizeToGradientTemplate(grad2Raw, grad1Raw);
 
