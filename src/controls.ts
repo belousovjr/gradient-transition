@@ -1,4 +1,8 @@
-import { propertyName, renderClassName } from "./core/constants.ts";
+import {
+  propertyName,
+  renderClassName,
+  wrapperClassName,
+} from "./core/constants.ts";
 import {
   AttachOptions,
   initialTransitionState,
@@ -19,7 +23,13 @@ let animFrame: null | number;
 export function attach(selector: string, options: AttachOptions = {}) {
   const elements = document.querySelectorAll<Target>(selector);
   for (const el of elements) {
-    const target = el.querySelector<Target>(renderClassName);
+    if (!el.classList.contains(wrapperClassName)) {
+      console.warn(
+        `Wrapper element is missing the required class ".${wrapperClassName}".`,
+      );
+    }
+
+    const target = el.querySelector<Target>(`.${renderClassName}`);
 
     if (target) {
       wraps.set(el, {
@@ -28,8 +38,8 @@ export function attach(selector: string, options: AttachOptions = {}) {
         target,
       });
     } else {
-      console.warn(
-        `There is no .gt-render child element inside the ${selector} wrapper.`,
+      throw new Error(
+        `There is no ".${renderClassName}" child element inside "${selector}" wrapper.`,
       );
     }
   }
