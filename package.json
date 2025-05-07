@@ -1,6 +1,6 @@
 {
   "name": "gradient-transition",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "A JavaScript library to smoothly animate background-image gradients.",
   "repository": {
@@ -11,6 +11,7 @@
   "main": "./dist/gradient-transition.cjs",
   "module": "./dist/gradient-transition.js",
   "unpkg": "./dist/gradient-transition.umd.cjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -52,7 +53,7 @@
     "@types/gradient-parser": "^0.1.5",
     "bezier-easing": "^2.1.0",
     "color-rgba": "^3.0.0",
-    "css-rules-matcher": "^0.0.7",
+    "css-rules-matcher": "^0.0.8",
     "gradient-parser": "^1.1.1",
     "vite-plugin-css-injected-by-js": "^3.5.2"
   }
