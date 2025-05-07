@@ -56,12 +56,11 @@ yarn add gradient-transition
 3. **Initialize** with JavaScript:
 
    ```js
+   import CSSRulesMatcher from 'css-rules-matcher';
    // Attach gradient transition to all matching wrappers
    GradientTransition.attach('.gt-wrap.my-wrapper');
-
    // To detach
    GradientTransition.detach('.gt-wrap.my-wrapper');
-
    // To reset all transitions
    GradientTransition.reset();
    ```
