@@ -82,15 +82,18 @@ export default class TransitionProvider<T, S> {
         progress !== 1 ? this.getCurrentState(time) : this.#states.next.value;
 
       const nextValue = this.parseFn(params.state);
-      const timeDiff = time - this.#startTime;
+
+      const newDurationSub =
+        this.#timeOptions.duration -
+        this.#durationSub -
+        (time - this.#startTime);
 
       if (
+        newDurationSub >= 0 &&
         progress !== 1 &&
-        timeDiff >= 0 &&
         (!this.#states.prev || params.key === this.#states.prev?.key)
       ) {
-        this.#durationSub =
-          this.#timeOptions.duration - timeDiff - this.#durationSub;
+        this.#durationSub = newDurationSub;
       } else {
         this.#durationSub = 0;
       }
