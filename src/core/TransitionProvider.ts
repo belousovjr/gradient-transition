@@ -55,7 +55,7 @@ export default class TransitionProvider<T, S> {
     const initialStateParsed = { key: params.initialKey, value: initialValue };
     this.#states = {
       prev: null,
-      next: { ...initialStateParsed },
+      next: initialStateParsed,
     };
   }
   #updateOptions(timeOptions?: TimeOptions) {
@@ -76,7 +76,6 @@ export default class TransitionProvider<T, S> {
   }
   setState(time: number, params: TProviderSetStateParams<S>) {
     if (params.key !== this.#states.next.key) {
-      this.#updateOptions(params.timeOptions);
       const progress = this.#calcProgress(time);
 
       const prevValue =
@@ -108,6 +107,7 @@ export default class TransitionProvider<T, S> {
         },
         next: { value: { ...nextValue }, key: params.key },
       };
+      this.#updateOptions(params.timeOptions);
 
       this.#startTime = time + this.#timeOptions.delay;
       this.#cached = false;
@@ -133,6 +133,7 @@ export default class TransitionProvider<T, S> {
   getCurrentState(time: number, stringify: true): string;
   getCurrentState(time: number, stringify?: boolean): T | string {
     const progress = this.#calcProgress(time);
+
     const value = this.#states.prev
       ? this.interpolateFn(
           this.#states.prev.value,

@@ -12,11 +12,15 @@ export interface ColorStopParsed {
   length?: LengthParsed;
 }
 
-export type GradientParsed = {
-  type: GradientNode["type"];
-  orientation: OrientationParsed;
-  colorStops: ColorStopParsed[];
-} | null;
+export type GradientParsedEmpty = { type: "none" };
+
+export type GradientParsed =
+  | {
+      type: GradientNode["type"];
+      orientation: OrientationParsed;
+      colorStops: ColorStopParsed[];
+    }
+  | GradientParsedEmpty;
 
 export interface GradientParsingOptions {
   emSize: number;
@@ -27,7 +31,7 @@ export function parseGradient(
   options: GradientParsingOptions,
 ): GradientParsed {
   if (gradientStr === "none") {
-    return null;
+    return { type: "none" };
   }
 
   let parsedGradient!: GradientNode;
@@ -69,7 +73,7 @@ export function parseGradient(
 }
 
 export function stringifyGradient(grad: GradientParsed) {
-  if (grad) {
+  if (grad.type !== "none") {
     const orientation = stringifyOrientation(grad.orientation);
     const stops = grad.colorStops.map((item) => {
       const color = stringifyColor(item.value);
