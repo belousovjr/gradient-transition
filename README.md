@@ -22,7 +22,7 @@ yarn add gradient-transition
 **CDN:**
 
 ```html
-<script src="https://unpkg.com/gradient-transition@0.0.6/dist/gradient-transition.umd.cjs"></script>
+<script src="https://unpkg.com/gradient-transition@0.0.7/dist/gradient-transition.umd.cjs"></script>
 ```
 
 > **Note**: This will expose the library globally as `GradientTransition`.
@@ -46,11 +46,11 @@ yarn add gradient-transition
 
    ```css
    .my-wrapper .my-gradient {
-     background-image: linear-gradient(90deg, green, white, red);
-     transition: background-image 1s ease-in-out;
+     background-image: linear-gradient(90deg, #006d77, #83c5be, #edf6f9);
+     transition: background-image 0.5s ease-in-out;
    }
    .my-wrapper:hover .my-gradient {
-     background-image: linear-gradient(to bottom, black, red, yellow);
+     background-image: linear-gradient(to bottom, #a31621, #bfdbf7, #053c5e);
    }
    ```
 
@@ -58,6 +58,7 @@ yarn add gradient-transition
 
    ```js
    import { attach, detach, reset } from "gradient-transition";
+   
    attach(".gt-wrap.my-wrapper"); // Attach to all matching wrappers
    detach(".gt-wrap.my-wrapper"); // To detach
    reset(); // To reset all

@@ -1,4 +1,8 @@
-import { ColorStopParsed, GradientParsed } from "./gradients.ts";
+import {
+  ColorStopParsed,
+  GradientParsed,
+  GradientParsedEmpty,
+} from "./gradients.ts";
 import { ColorParsed } from "./colors.ts";
 import { OrientationParsed } from "./orientation.ts";
 import { initialColorParsed } from "./colors.ts";
@@ -82,10 +86,10 @@ function interpolateColor(
 function normalizeToGradientTemplate(
   grad1: GradientParsed,
   gradTemplate: GradientParsed,
-): Exclude<GradientParsed, null> {
-  if (grad1) {
+): Exclude<GradientParsed, GradientParsedEmpty> {
+  if (grad1.type !== "none") {
     return grad1;
-  } else if (gradTemplate) {
+  } else if (gradTemplate.type !== "none") {
     return {
       type: gradTemplate.type,
       colorStops: gradTemplate.colorStops.map((stop) => ({
